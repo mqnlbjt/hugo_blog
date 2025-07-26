@@ -2,7 +2,8 @@ baseURL = "https://mqnlbjt.github.io/hugo_blog/"
 languageCode = "zh-cn"
 title = "mqnlbjt"
 theme = "PaperMod"
-publishDir = "docs" # 这行我帮你加回来了，因为你的部署流程需要它
+publishDir = "docs"
+metaDataFormat = "yaml" # <--- 添加这一行，一劳永逸！
 
 [params]
   defaultTheme = "auto"
