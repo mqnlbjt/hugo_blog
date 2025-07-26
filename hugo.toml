@@ -2,3 +2,4 @@ baseURL = 'https://mqnlbjt.github.io/hugo_blog/'
 languageCode = 'zh-cn'
 title = '我的新 Hugo 网站'
 theme = 'ananke'
+

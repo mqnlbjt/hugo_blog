@@ -30,7 +30,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.119.0 # 可以指定你使用的 Hugo 版本
+      HUGO_VERSION: 0.119.0 # 你可以指定你使用的 Hugo 版本
     steps:
       - name: Install Hugo CLI
         run: |
@@ -46,7 +46,8 @@ jobs:
         run: hugo --minify
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        # [修改点 1] 将版本从 v2 更新到 v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
@@ -59,4 +60,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3
+        # [修改点 2] 将版本从 v3 更新到 v4
+        uses: actions/deploy-pages@v4
