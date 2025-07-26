@@ -1,38 +1,44 @@
-baseURL = "https://mqnlbjt.github.io/hugo_blog/"  # 替换成你的网址
-languageCode = "zh-cn" # 语言改成中文
-title = "mqnlbjt" # 网站标题
-theme = "PaperMod"   # 指定使用 PaperMod 主题
+baseURL = "https://mqnlbjt.github.io/hugo_blog/"
+languageCode = "zh-cn"
+title = "mqnlbjt"
+theme = "PaperMod"
+publishDir = "docs" # 这行我帮你加回来了，因为你的部署流程需要它
 
 [params]
-# 这是 PaperMod 主题的一些参数配置
-defaultTheme = "auto" # 默认主题（auto, light, dark）
-ShowShareButtons = true
-ShowReadingTime = true
-ShowPostNavLinks = true
+  defaultTheme = "auto"
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  mainSections = ["posts"] # <--- 关键补充：告诉主题文章在哪里
 
 [params.profileMode]
-# 这是配置主页个人信息的模式
-enabled = true
-title = "你好，我是 mqnlbjt"
-subtitle = "这里是我的技术分享与生活点滴。欢迎来到我的数字花园！"
-imageUrl = "" # 可以放一个头像图片的链接
-imageWidth = 120
-imageHeight = 120
+  enabled = true
+  title = "你好，我是 mqnlbjt"
+  subtitle = "这里是我的技术分享与生活点滴。欢迎来到我的数字花园！"
+  imageUrl = "" # 你可以放一个头像图片的 URL
+  imageWidth = 120
+  imageHeight = 120
 
-# 社交链接
+# --- 菜单配置 ---
+[[menu.main]]
+  identifier = "posts"
+  name = "文章" # <--- 关键补充：访问文章列表的入口
+  url = "/posts/"
+  weight = 5
+
+[[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 20
+
+# --- 社交链接 ---
 [[params.socialIcons]]
-name = "github"
-url = "https://github.com/mqnlbjt" # 你的 GitHub 链接
-
-# 网站菜单
-[[menu.main]]
-identifier = "archives"
-name = "归档"
-url = "/archives/"
-weight = 10
-
-[[menu.main]]
-identifier = "tags"
-name = "标签"
-url = "/tags/"
-weight = 20
+  name = "github"
+  url = "https://github.com/mqnlbjt"
