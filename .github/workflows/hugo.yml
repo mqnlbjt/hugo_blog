@@ -2,26 +2,20 @@
 name: Deploy Hugo site to Pages
 
 on:
-  # 在推送到`main`分支时会触发
   push:
     branches:
       - main
-
-  # 允许你手动在 Actions 页签中执行此工作流
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，以便部署到 GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 只允许一个并发部署，跳过在进行中的部署之间排队的运行。
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# 默认使用 bash
 defaults:
   run:
     shell: bash
@@ -30,7 +24,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.119.0 # 你可以指定你使用的 Hugo 版本
+      # [最终修改] 与你的本地版本完全保持一致
+      HUGO_VERSION: 0.148.1 
     steps:
       - name: Install Hugo CLI
         run: |
@@ -40,13 +35,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive # 拉取主题等子模块
+          submodules: recursive
 
       - name: Build with Hugo
         run: hugo --minify
 
       - name: Upload artifact
-        # [修改点 1] 将版本从 v2 更新到 v3
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
@@ -60,5 +54,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        # [修改点 2] 将版本从 v3 更新到 v4
         uses: actions/deploy-pages@v4
+
