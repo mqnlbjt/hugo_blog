@@ -1,6 +1,6 @@
 baseURL = "https://mqnlbjt.github.io/hugo_blog/"  # 替换成你的网址
 languageCode = "zh-cn" # 语言改成中文
-title = "我的新博客" # 网站标题
+title = "mqnlbjt" # 网站标题
 theme = "PaperMod"   # 指定使用 PaperMod 主题
 
 [params]
