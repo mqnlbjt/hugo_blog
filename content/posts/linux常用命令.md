@@ -33,3 +33,40 @@ tags: [linux]
 
 `systemctl start firewalld` 开启防火墙
 
+`systemctl status firewalld` 查看防火墙状态
+
+`  firewall-cmd --list-port` 查询已经开放的端口
+
+### 解压缩
+
+zip格式：
+
++ `zip -r  压缩包名 .zip  文件路径`
++ `unzip 压缩包名 .zip`
+
+tar格式(更常用):
+
++ 打成tar包：`tar -cvf  压缩包名 .tar  文件路径`
++ 解包：`  tar -xvf  包名 .tar  解包后的名`
++ 打成tar压缩包`  tar -zcvf  包名 .tar 文件名`
++ 解压：`tar -xzvf  包名 .tar  解包后的名`
+
+### 其他
+
+发送文件：scp  哪个⽂件 / 压缩包  对⽅⽤户名 @ 对⽅主机 : 发到哪个位置
+
+查看磁盘文件：df 
+
+输入过的命令：history
+
+查看ip：ip addr
+
+文件详细信息：ll == ls -l
+
+查看文件：
+
++ tail 文件名   查看文件最后10行 tail -n 文件名    查看文件后n行
++ cat 全部展示
++ less 显示一页
+
+查看进程：ps aux 可以配合grep 使用
